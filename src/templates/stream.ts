@@ -29,7 +29,7 @@ export const streamTemplate: Template = {
     supportsMultiTrack: true,
     maxTracks: 5,
     variants: Object.keys(VARIANTS),
-    previewDimensions: { width: 480, height: 180 },
+    previewDimensions: { width: 480, height: 160 },
   },
 
   render(options: TemplateRenderOptions): string {
@@ -38,7 +38,7 @@ export const streamTemplate: Template = {
     const ACCENT = colors.accent;
     const BG = colors.bg;
     const width = 480;
-    const baseHeight = 180;
+    const baseHeight = 160;
     const extraTracks = tracks.slice(1);
     const height = baseHeight + extraTracks.length * EXTRA_TRACK_HEIGHT;
 
@@ -143,8 +143,8 @@ export const streamTemplate: Template = {
     svg += `  <rect x="${ctrlCenterX + 2}" y="${ctrlY - 9}" width="5" height="18" rx="1" fill="${FG}" />\n`;
 
     // next
-    svg += `  <polygon points="${ctrlCenterX + 18},${ctrlY} ${ctrlCenterX + 30},${ctrlY - 7} ${ctrlCenterX + 30},${ctrlY + 7}" fill="${MUTED}" />\n`;
-    svg += `  <polygon points="${ctrlCenterX + 28},${ctrlY} ${ctrlCenterX + 40},${ctrlY - 7} ${ctrlCenterX + 40},${ctrlY + 7}" fill="${MUTED}" />\n`;
+    svg += `  <polygon points="${ctrlCenterX + 18},${ctrlY - 7} ${ctrlCenterX + 18},${ctrlY + 7} ${ctrlCenterX + 30},${ctrlY}" fill="${MUTED}" />\n`;
+    svg += `  <polygon points="${ctrlCenterX + 28},${ctrlY - 7} ${ctrlCenterX + 28},${ctrlY + 7} ${ctrlCenterX + 40},${ctrlY}" fill="${MUTED}" />\n`;
 
     // equalizer bars (컨트롤 오른쪽)
     const eqX = width - pad - 28;
