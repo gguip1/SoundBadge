@@ -63,7 +63,7 @@ export default function BuilderPage() {
               <p className="text-sm text-text-muted">Your code has a soundtrack.</p>
             </div>
             <a
-              href="https://github.com"
+              href="https://github.com/gguip1/SoundBadge"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-border-default px-3 py-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
