@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --color-surface: #09090b;
+  --color-surface-card: #18181b;
+  --color-surface-input: #27272a;
+
+  --color-border-default: #3f3f46;
+  --color-border-subtle: #27272a;
+
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+}

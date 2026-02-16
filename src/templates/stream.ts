@@ -1,8 +1,6 @@
 import type { Template, TemplateRenderOptions } from "./types";
 import { truncate, esc } from "./utils";
 
-const BG = "#191414";
-const ACCENT = "#1DB954";
 const FG = "#ffffff";
 const MUTED = "#b3b3b3";
 const FONT = "'Segoe UI', system-ui, -apple-system, sans-serif";
@@ -10,6 +8,16 @@ const EXTRA_TRACK_HEIGHT = 40;
 const TITLE_FONT_SIZE = 16;
 const TITLE_CHAR_WIDTH = TITLE_FONT_SIZE * 0.58;
 const TITLE_MAX_CHARS = 30;
+const MARQUEE_GAP = 80;
+const MARQUEE_SPEED = 50; // px per second
+
+const VARIANTS: Record<string, { accent: string; bg: string }> = {
+  green: { accent: "#1DB954", bg: "#191414" },
+  purple: { accent: "#8b5cf6", bg: "#1a1625" },
+  blue: { accent: "#3b82f6", bg: "#141a24" },
+  pink: { accent: "#ec4899", bg: "#1f1418" },
+  red: { accent: "#ef4444", bg: "#1a1414" },
+};
 
 export const streamTemplate: Template = {
   meta: {
@@ -20,12 +28,15 @@ export const streamTemplate: Template = {
     supportsLayout: false,
     supportsMultiTrack: true,
     maxTracks: 5,
-    variants: [],
+    variants: Object.keys(VARIANTS),
     previewDimensions: { width: 480, height: 180 },
   },
 
   render(options: TemplateRenderOptions): string {
-    const { track, tracks } = options;
+    const { track, tracks, variant } = options;
+    const colors = VARIANTS[variant ?? "green"] ?? VARIANTS.green;
+    const ACCENT = colors.accent;
+    const BG = colors.bg;
     const width = 480;
     const baseHeight = 180;
     const extraTracks = tracks.slice(1);
@@ -54,8 +65,10 @@ export const streamTemplate: Template = {
       svg += `    <clipPath id="titleClip"><rect x="${textX}" y="${pad}" width="${textMaxWidth}" height="28" /></clipPath>\n`;
     }
 
+    // equalizer positioned to the right of controls, slightly lower
+    const eqBase = pad + 58 + 32 + 8;
+
     svg += `    <style>\n`;
-    const eqBase = artY + artSize + 10;
     svg += `      @keyframes eq1{0%,100%{height:6px;y:${eqBase + 14}px}50%{height:20px;y:${eqBase}px}}\n`;
     svg += `      @keyframes eq2{0%,100%{height:14px;y:${eqBase + 6}px}50%{height:8px;y:${eqBase + 12}px}}\n`;
     svg += `      @keyframes eq3{0%,100%{height:10px;y:${eqBase + 10}px}50%{height:20px;y:${eqBase}px}}\n`;
@@ -66,8 +79,10 @@ export const streamTemplate: Template = {
     svg += `      .eq4{animation:eq4 .7s ease-in-out infinite}\n`;
 
     if (titleNeedsScroll) {
-      svg += `      @keyframes streamScroll{0%,15%{transform:translateX(0)}85%,100%{transform:translateX(-${Math.ceil(titleOverflow + 20)}px)}}\n`;
-      svg += `      .stream-marquee{animation:streamScroll 8s ease-in-out infinite alternate}\n`;
+      const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
+      const duration = Math.max(4, loopDist / MARQUEE_SPEED);
+      svg += `      @keyframes streamScroll{0%{transform:translateX(0)}100%{transform:translateX(-${loopDist}px)}}\n`;
+      svg += `      .stream-marquee{animation:streamScroll ${duration.toFixed(1)}s linear infinite}\n`;
     }
 
     svg += `    </style>\n`;
@@ -84,10 +99,14 @@ export const streamTemplate: Template = {
       svg += `  <text x="${artX + artSize / 2}" y="${artY + artSize / 2 + 8}" font-size="28" fill="${ACCENT}" text-anchor="middle" font-family="system-ui">&#9835;</text>\n`;
     }
 
-    // title (with marquee if needed)
+    // title (with continuous marquee if needed)
     if (titleNeedsScroll) {
+      const secondX = textX + Math.ceil(titleFullWidth + MARQUEE_GAP);
       svg += `  <g clip-path="url(#titleClip)">\n`;
-      svg += `    <text x="${textX}" y="${pad + 22}" font-size="${TITLE_FONT_SIZE}" fill="${FG}" font-family="${FONT}" font-weight="bold" class="stream-marquee">${esc(titleText)}</text>\n`;
+      svg += `    <g class="stream-marquee">\n`;
+      svg += `      <text x="${textX}" y="${pad + 22}" font-size="${TITLE_FONT_SIZE}" fill="${FG}" font-family="${FONT}" font-weight="bold">${esc(track.title)}</text>\n`;
+      svg += `      <text x="${secondX}" y="${pad + 22}" font-size="${TITLE_FONT_SIZE}" fill="${FG}" font-family="${FONT}" font-weight="bold">${esc(track.title)}</text>\n`;
+      svg += `    </g>\n`;
       svg += `  </g>\n`;
     } else {
       svg += `  <text x="${textX}" y="${pad + 22}" font-size="${TITLE_FONT_SIZE}" fill="${FG}" font-family="${FONT}" font-weight="bold">${esc(titleText)}</text>\n`;
@@ -127,9 +146,8 @@ export const streamTemplate: Template = {
     svg += `  <polygon points="${ctrlCenterX + 18},${ctrlY} ${ctrlCenterX + 30},${ctrlY - 7} ${ctrlCenterX + 30},${ctrlY + 7}" fill="${MUTED}" />\n`;
     svg += `  <polygon points="${ctrlCenterX + 28},${ctrlY} ${ctrlCenterX + 40},${ctrlY - 7} ${ctrlCenterX + 40},${ctrlY + 7}" fill="${MUTED}" />\n`;
 
-    // equalizer bars (album art 아래, 왼쪽 정렬)
-    const eqX = artX + Math.round(artSize / 2) - 14;
-    const eqTopY = artY + artSize + 10;
+    // equalizer bars (컨트롤 오른쪽)
+    const eqX = width - pad - 28;
     svg += `  <rect x="${eqX}" width="4" rx="1" fill="${ACCENT}" class="eq1" />\n`;
     svg += `  <rect x="${eqX + 7}" width="4" rx="1" fill="${ACCENT}" class="eq2" />\n`;
     svg += `  <rect x="${eqX + 14}" width="4" rx="1" fill="${ACCENT}" class="eq3" />\n`;

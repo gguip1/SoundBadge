@@ -9,6 +9,8 @@ const FG = "#1e1e2e";
 const MUTED = "#6b7280";
 const BORDER = "#e5e7eb";
 const EXTRA_TRACK_HEIGHT = 40;
+const MARQUEE_GAP = 80;
+const MARQUEE_SPEED = 50;
 
 export const cleanTemplate: Template = {
   meta: {
@@ -38,8 +40,12 @@ export const cleanTemplate: Template = {
 
     const textX = padding + thumbnailSize + padding;
     const textMaxWidth = width - textX - padding;
-    const maxTitleChars = Math.floor(textMaxWidth / (titleSize * 0.55));
+    const titleCharWidth = titleSize * 0.55;
+    const maxTitleChars = Math.floor(textMaxWidth / titleCharWidth);
     const maxSubChars = Math.floor(textMaxWidth / (subtitleSize * 0.55));
+
+    const titleNeedsScroll = track.title.length > maxTitleChars;
+    const titleFullWidth = track.title.length * titleCharWidth;
 
     const hasLabel = !!label;
     const hasTags = tags && tags.length > 0;
@@ -57,7 +63,15 @@ export const cleanTemplate: Template = {
     svg += `  <defs>\n`;
     svg += `    <clipPath id="thumbClip"><rect x="${thumbX}" y="${thumbY}" width="${thumbnailSize}" height="${thumbnailSize}" rx="${thumbRadius}" /></clipPath>\n`;
     svg += `    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.08" /></filter>\n`;
-    svg += `    <style>@keyframes fadeIn{from{opacity:0}to{opacity:1}}.card{animation:fadeIn .4s ease}</style>\n`;
+
+    let styleBlock = `@keyframes fadeIn{from{opacity:0}to{opacity:1}}.card{animation:fadeIn .4s ease}`;
+    if (titleNeedsScroll) {
+      const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
+      const duration = Math.max(4, loopDist / MARQUEE_SPEED);
+      svg += `    <clipPath id="titleClip"><rect x="${textX}" y="0" width="${textMaxWidth}" height="${layoutConfig.height}" /></clipPath>\n`;
+      styleBlock += `@keyframes cleanScroll{0%{transform:translateX(0)}100%{transform:translateX(-${loopDist}px)}}.clean-marquee{animation:cleanScroll ${duration.toFixed(1)}s linear infinite}`;
+    }
+    svg += `    <style>${styleBlock}</style>\n`;
     svg += `  </defs>\n`;
 
     // background
@@ -78,8 +92,19 @@ export const cleanTemplate: Template = {
       currentY += Math.round(subtitleSize * lineHeight);
     }
 
-    // title
-    svg += `  <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${FG}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(truncate(track.title, maxTitleChars))}</text>\n`;
+    // title (with continuous marquee if overflows)
+    if (titleNeedsScroll) {
+      const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
+      const secondX = textX + loopDist;
+      svg += `  <g clip-path="url(#titleClip)">\n`;
+      svg += `    <g class="clean-marquee">\n`;
+      svg += `      <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${FG}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(track.title)}</text>\n`;
+      svg += `      <text x="${secondX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${FG}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(track.title)}</text>\n`;
+      svg += `    </g>\n`;
+      svg += `  </g>\n`;
+    } else {
+      svg += `  <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${FG}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(truncate(track.title, maxTitleChars))}</text>\n`;
+    }
     currentY += Math.round(titleSize * lineHeight);
 
     // channel

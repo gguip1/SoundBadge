@@ -12,6 +12,8 @@ const EXTRA_TRACK_HEIGHT = 60;
 const TITLE_FONT_SIZE = 18;
 const TITLE_CHAR_WIDTH = TITLE_FONT_SIZE * 0.58;
 const TITLE_MAX_CHARS = 26;
+const MARQUEE_GAP = 80;
+const MARQUEE_SPEED = 50;
 
 export const neonTemplate: Template = {
   meta: {
@@ -78,8 +80,10 @@ export const neonTemplate: Template = {
     svg += `      .neon-pulse{animation:pulse 3s ease-in-out infinite}\n`;
 
     if (titleNeedsScroll) {
-      svg += `      @keyframes neonScroll{0%,15%{transform:translateX(0)}85%,100%{transform:translateX(-${Math.ceil(titleOverflow + 20)}px)}}\n`;
-      svg += `      .neon-marquee{animation:neonScroll 8s ease-in-out infinite alternate}\n`;
+      const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
+      const duration = Math.max(4, loopDist / MARQUEE_SPEED);
+      svg += `      @keyframes neonScroll{0%{transform:translateX(0)}100%{transform:translateX(-${loopDist}px)}}\n`;
+      svg += `      .neon-marquee{animation:neonScroll ${duration.toFixed(1)}s linear infinite}\n`;
     }
 
     svg += `    </style>\n`;
@@ -103,10 +107,15 @@ export const neonTemplate: Template = {
       svg += `  <text x="${thumbX + thumbSize / 2}" y="${thumbY + thumbSize / 2 + 10}" font-size="32" fill="${glow}" text-anchor="middle" font-family="system-ui" filter="url(#glowLight)">&#9835;</text>\n`;
     }
 
-    // title (neon glow + marquee if needed)
+    // title (neon glow + continuous marquee if needed)
     if (titleNeedsScroll) {
+      const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
+      const secondX = textX + loopDist;
       svg += `  <g clip-path="url(#titleClip)">\n`;
-      svg += `    <text x="${textX}" y="${titleY}" font-size="${TITLE_FONT_SIZE}" fill="${glow}" font-family="${FONT}" font-weight="bold" filter="url(#glowLight)" class="neon-marquee">${esc(titleText)}</text>\n`;
+      svg += `    <g class="neon-marquee">\n`;
+      svg += `      <text x="${textX}" y="${titleY}" font-size="${TITLE_FONT_SIZE}" fill="${glow}" font-family="${FONT}" font-weight="bold" filter="url(#glowLight)">${esc(track.title)}</text>\n`;
+      svg += `      <text x="${secondX}" y="${titleY}" font-size="${TITLE_FONT_SIZE}" fill="${glow}" font-family="${FONT}" font-weight="bold" filter="url(#glowLight)">${esc(track.title)}</text>\n`;
+      svg += `    </g>\n`;
       svg += `  </g>\n`;
     } else {
       svg += `  <text x="${textX}" y="${titleY}" font-size="${TITLE_FONT_SIZE}" fill="${glow}" font-family="${FONT}" font-weight="bold" filter="url(#glowLight)" class="neon-pulse">${esc(titleText)}</text>\n`;

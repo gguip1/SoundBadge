@@ -11,6 +11,8 @@ const VARIANTS: Record<string, { left: string; text: string }> = {
 
 const CHAR_WIDTH = 6.5;
 const MAX_RIGHT_DISPLAY_CHARS = 40;
+const MARQUEE_GAP = 60;
+const MARQUEE_SPEED = 40;
 
 export const badgeTemplate: Template = {
   meta: {
@@ -52,18 +54,25 @@ export const badgeTemplate: Template = {
     let style = "";
 
     if (needsScroll) {
-      // 양쪽 rightPad만큼 여백 확보
+      const loopDist = Math.ceil(fullTextWidth + MARQUEE_GAP);
+      const duration = Math.max(4, loopDist / MARQUEE_SPEED);
       defs += `    <clipPath id="rightClip"><rect x="${leftWidth + rightPad}" y="0" width="${rightWidth - rightPad * 2}" height="${height}" /></clipPath>\n`;
       style = `    <style>
-      @keyframes badgeScroll{0%,15%{transform:translateX(0)}85%,100%{transform:translateX(-${Math.ceil(overflow + rightPad)}px)}}
-      .badge-marquee{animation:badgeScroll 8s ease-in-out infinite alternate}
+      @keyframes badgeScroll{0%{transform:translateX(0)}100%{transform:translateX(-${loopDist}px)}}
+      .badge-marquee{animation:badgeScroll ${duration.toFixed(1)}s linear infinite}
     </style>\n`;
     }
 
     let rightText: string;
     if (needsScroll) {
+      const loopDist = Math.ceil(fullTextWidth + MARQUEE_GAP);
+      const textStartX = leftWidth + rightPad;
+      const secondX = textStartX + loopDist;
       rightText = `  <g clip-path="url(#rightClip)">
-    <text x="${leftWidth + rightPad}" y="${height / 2 + 4}" fill="#fff" class="badge-marquee">${esc(rightLabel)}</text>
+    <g class="badge-marquee">
+      <text x="${textStartX}" y="${height / 2 + 4}" fill="#fff">${esc(rightLabel)}</text>
+      <text x="${secondX}" y="${height / 2 + 4}" fill="#fff">${esc(rightLabel)}</text>
+    </g>
   </g>`;
     } else {
       rightText = `    <text x="${leftWidth + rightWidth / 2}" y="${height / 2 + 4}" text-anchor="middle" fill="#fff">${esc(rightLabel)}</text>`;

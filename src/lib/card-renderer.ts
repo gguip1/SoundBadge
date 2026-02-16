@@ -3,6 +3,9 @@ import type { LayoutConfig } from "@/layouts/types";
 import type { YouTubeMetadata } from "./youtube";
 import { fetchImageAsBase64, truncate, esc } from "@/templates/utils";
 
+const MARQUEE_GAP = 80;
+const MARQUEE_SPEED = 50;
+
 export interface CardOptions {
   theme: Theme;
   layout: LayoutConfig;
@@ -40,10 +43,15 @@ export async function renderCardSvg(options: CardOptions): Promise<string> {
   let currentY = textStartY;
 
   // 텍스트 truncation
-  const maxTitleChars = Math.floor(textMaxWidth / (titleSize * 0.55));
+  const titleCharWidth = titleSize * 0.55;
+  const maxTitleChars = Math.floor(textMaxWidth / titleCharWidth);
   const maxSubChars = Math.floor(textMaxWidth / (subtitleSize * 0.55));
   const truncatedTitle = truncate(metadata.title, maxTitleChars);
   const truncatedChannel = truncate(metadata.channelName, maxSubChars);
+
+  // 마키 스크롤 감지
+  const titleNeedsScroll = metadata.title.length > maxTitleChars;
+  const titleFullWidth = metadata.title.length * titleCharWidth;
 
   // SVG 조립
   const defs = buildDefs(tokens, width, height, thumbX, thumbY, thumbnailSize, thumbRadius);
@@ -78,8 +86,25 @@ export async function renderCardSvg(options: CardOptions): Promise<string> {
     currentY += Math.round(subtitleSize * lineHeight);
   }
 
-  // Title
-  svgContent += `  <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${esc(tokens.fg)}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(truncatedTitle)}</text>\n`;
+  // Title (with continuous marquee if overflows)
+  if (titleNeedsScroll) {
+    const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
+    const duration = Math.max(4, loopDist / MARQUEE_SPEED);
+    const clipY = currentY;
+    const secondX = textX + loopDist;
+    svgContent += `  <defs>\n`;
+    svgContent += `    <clipPath id="titleClip"><rect x="${textX}" y="${clipY}" width="${textMaxWidth}" height="${Math.round(titleSize * 1.5)}" /></clipPath>\n`;
+    svgContent += `    <style>@keyframes titleScroll{0%{transform:translateX(0)}100%{transform:translateX(-${loopDist}px)}}.title-marquee{animation:titleScroll ${duration.toFixed(1)}s linear infinite}</style>\n`;
+    svgContent += `  </defs>\n`;
+    svgContent += `  <g clip-path="url(#titleClip)">\n`;
+    svgContent += `    <g class="title-marquee">\n`;
+    svgContent += `      <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${esc(tokens.fg)}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(metadata.title)}</text>\n`;
+    svgContent += `      <text x="${secondX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${esc(tokens.fg)}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(metadata.title)}</text>\n`;
+    svgContent += `    </g>\n`;
+    svgContent += `  </g>\n`;
+  } else {
+    svgContent += `  <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${esc(tokens.fg)}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(truncatedTitle)}</text>\n`;
+  }
   currentY += Math.round(titleSize * lineHeight);
 
   // Channel

@@ -21,7 +21,7 @@ export const terminalTemplate: Template = {
     supportsMultiTrack: true,
     maxTracks: 5,
     variants: [],
-    previewDimensions: { width: 480, height: 170 },
+    previewDimensions: { width: 480, height: 178 },
   },
 
   render(options: TemplateRenderOptions): string {
@@ -29,7 +29,7 @@ export const terminalTemplate: Template = {
     const width = 480;
     const isMulti = tracks.length > 1;
     const extraTracks = tracks.slice(1);
-    const baseHeight = 170;
+    const baseHeight = 178;
     const height = baseHeight + extraTracks.length * EXTRA_TRACK_HEIGHT;
 
     const pad = 20;
@@ -63,8 +63,8 @@ export const terminalTemplate: Template = {
     // title text
     svg += `  <text x="${width / 2}" y="${lightY + 4}" font-size="12" fill="${GRAY}" text-anchor="middle" font-family="${FONT}">soundbadge \u2014 now-playing</text>\n`;
 
-    // content area
-    let y = titleBarH + pad;
+    // content area (title bar 아래 여유 여백)
+    let y = titleBarH + pad + 8;
 
     if (!isMulti) {
       // single track mode
