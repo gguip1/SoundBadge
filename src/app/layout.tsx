@@ -4,7 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "SoundBadge - Music Taste Card for GitHub",
   description: "Show your vibe, not just your stack.",
-  icons: { icon: "/favicon.png" },
 };
 
 export default function RootLayout({
