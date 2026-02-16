@@ -252,7 +252,7 @@ GitHub은 테마별 이미지를 지원합니다. 다크/라이트 모드에 따
 
 ## 빌더 사용하기
 
-URL을 직접 쓰기 귀찮다면 **[SoundBadge 빌더](https://sound-badge.vercel.app)**를 이용하세요.
+URL을 직접 쓰기 귀찮다면 [SoundBadge 빌더](https://sound-badge.vercel.app)를 이용하세요.
 
 유튜브 링크 붙여넣기 → 테마 선택 → 옵션 조정 → 코드 복사. 끝.
 
