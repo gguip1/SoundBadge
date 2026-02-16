@@ -54,7 +54,7 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 #### Badge
 
-shields.io 스타일 인라인 배지. 어디든 들어갑니다.
+한 줄짜리 인라인 배지. 어디든 들어갑니다.
 
 <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge" alt="Badge 템플릿" />
 
@@ -80,7 +80,7 @@ shields.io 스타일 인라인 배지. 어디든 들어갑니다.
 
 #### Stream
 
-Spotify 스타일 플레이어. 이퀄라이저 애니메이션과 프로그레스 바 포함.
+스트리밍 플레이어 UI. 이퀄라이저 애니메이션과 프로그레스 바 포함.
 
 <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream" alt="Stream 템플릿" />
 

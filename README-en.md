@@ -54,7 +54,7 @@ Five purpose-built templates — from minimal badges to full player UIs.
 
 #### Badge
 
-Shields.io-style inline badge. Fits anywhere.
+One-line inline badge. Fits anywhere.
 
 <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&theme=badge" alt="Badge template" />
 
@@ -80,7 +80,7 @@ A clean, minimal card. Supports all layouts and multi-track.
 
 #### Stream
 
-Spotify-inspired player with animated equalizer and progress bar.
+Streaming player UI with animated equalizer and progress bar.
 
 <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&theme=stream" alt="Stream template" />
 

@@ -18,7 +18,7 @@ export const badgeTemplate: Template = {
   meta: {
     id: "badge",
     displayName: "Badge",
-    description: "shields.io 스타일 인라인 배지",
+    description: "한 줄 인라인 배지",
     category: "simple",
     supportsLayout: false,
     supportsMultiTrack: false,
