@@ -155,7 +155,7 @@ Classic themes and the Clean template support three layout sizes:
 
 Add context with tags and a custom label:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&theme=clean&tags=pop,80s,classic&label=Now Playing" alt="tags and label example" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&theme=clean&tags=pop,80s,classic&label=Now%20Playing" alt="tags and label example" />
 
 ```
 ?tags=pop,80s,classic&label=Now Playing

@@ -155,7 +155,7 @@ Spotify 스타일 플레이어. 이퀄라이저 애니메이션과 프로그레�
 
 태그와 커스텀 라벨로 맥락을 추가하세요:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean&tags=kpop,chill,vibe&label=지금 듣는 중" alt="태그와 라벨 예시" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean&tags=kpop,chill,vibe&label=%EC%A7%80%EA%B8%88%20%EB%93%A3%EB%8A%94%20%EC%A4%91" alt="태그와 라벨 예시" />
 
 ```
 ?tags=kpop,chill,vibe&label=지금 듣는 중
