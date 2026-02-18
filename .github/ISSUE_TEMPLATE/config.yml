@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contributing Guide
+    url: https://github.com/gguip/SoundBadge/blob/main/CONTRIBUTING.md
+    about: Please read the contributing guide before opening an issue.
