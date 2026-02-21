@@ -122,6 +122,23 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 </details>
 
+#### Receipt
+
+라이브 공연 티켓이나 영수증을 모방한 세로형 멀티트랙 레이아웃.
+
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt" alt="Receipt 템플릿" />
+
+<details>
+<summary>색상 변형</summary>
+<br />
+
+| 변형 | 미리보기 |
+|------|---------|
+| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=receipt" alt="receipt variant" /> |
+| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=dark_ticket" alt="dark_ticket variant" /> |
+
+</details>
+
 ---
 
 ### 클래식 테마
@@ -166,7 +183,9 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 ### 멀티트랙
 
-`stream`, `terminal`, `neon`, `clean` 템플릿은 여러 유튜브 URL을 지원합니다 — `url` 파라미터를 여러 번 전달하세요:
+### 멀티트랙
+
+`stream`, `terminal`, `neon`, `clean`, `receipt` 템플릿은 여러 유튜브 URL을 지원합니다 — `url` 파라미터를 여러 번 전달하세요:
 
 <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green" alt="멀티트랙 예시" />
 
@@ -204,7 +223,7 @@ https://sound-badge.vercel.app/api/card.svg
 | 타입 | 값 |
 |------|-----|
 | 클래식 | `minimal`, `mono`, `neon-legacy`, `pastel`, `sunset`, `midnight`, `glass`, `retro` |
-| 템플릿 | `badge`, `clean`, `stream`, `terminal`, `neon` |
+| 템플릿 | `badge`, `clean`, `stream`, `terminal`, `neon`, `receipt` |
 
 **변형 값:**
 
@@ -213,6 +232,7 @@ https://sound-badge.vercel.app/api/card.svg
 | `badge` | `blue`, `green`, `red`, `purple`, `orange` |
 | `stream` | `green`, `purple`, `blue`, `pink`, `red` |
 | `neon` | `green`, `pink`, `cyan` |
+| `receipt` | `receipt`, `dark_ticket` |
 
 ---
 

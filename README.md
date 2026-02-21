@@ -122,6 +122,23 @@ Glowing neon with glassmorphism grid and pulsing border.
 
 </details>
 
+#### Receipt
+
+Vertical multi-track layout mimicking a store receipt or concert ticket.
+
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt" alt="Receipt template" />
+
+<details>
+<summary>Color variants</summary>
+<br />
+
+| Variant | Preview |
+|---------|---------|
+| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=receipt" alt="receipt variant" /> |
+| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=dark_ticket" alt="dark_ticket variant" /> |
+
+</details>
+
 ---
 
 ### Classic Themes
@@ -166,7 +183,9 @@ Add context with tags and a custom label:
 
 ### Multi-Track
 
-The `stream`, `terminal`, `neon`, and `clean` templates support multiple YouTube URLs — pass multiple `url` parameters:
+### Multi-Track
+
+The `stream`, `terminal`, `neon`, `clean`, and `receipt` templates support multiple YouTube URLs — pass multiple `url` parameters:
 
 <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green" alt="multi-track example" />
 
@@ -204,7 +223,7 @@ https://sound-badge.vercel.app/api/card.svg
 | Type | Values |
 |------|--------|
 | Classic | `minimal`, `mono`, `neon-legacy`, `pastel`, `sunset`, `midnight`, `glass`, `retro` |
-| Templates | `badge`, `clean`, `stream`, `terminal`, `neon` |
+| Templates | `badge`, `clean`, `stream`, `terminal`, `neon`, `receipt` |
 
 **Variant values:**
 
@@ -213,6 +232,7 @@ https://sound-badge.vercel.app/api/card.svg
 | `badge` | `blue`, `green`, `red`, `purple`, `orange` |
 | `stream` | `green`, `purple`, `blue`, `pink`, `red` |
 | `neon` | `green`, `pink`, `cyan` |
+| `receipt` | `receipt`, `dark_ticket` |
 
 ---
 
