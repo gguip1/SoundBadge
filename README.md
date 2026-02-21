@@ -9,9 +9,10 @@
 Turn a YouTube link into a music taste badge for your GitHub profile.
 
 <br />
+✨ **[NEW] Receipt Template** — A multi-track ticket for your profile!
 
 <a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
-  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&variant=purple" alt="SoundBadge Demo" />
+  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt" alt="SoundBadge Demo - Receipt" />
 </a>
 
 <br />
@@ -122,7 +123,7 @@ Glowing neon with glassmorphism grid and pulsing border.
 
 </details>
 
-#### Receipt
+#### Receipt 🆕
 
 Vertical multi-track layout mimicking a store receipt or concert ticket.
 
