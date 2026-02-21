@@ -42,7 +42,12 @@ next-env.d.ts
 # bun
 bun.lock
 
-# claude settings
+# 
 .claude
 .mcp.json
 CLAUDE.md
+AGENTS.md
+
+# other
+.agent
+docs
