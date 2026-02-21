@@ -18,6 +18,9 @@ const VARIANT_COLORS: Record<string, string> = {
   // neon variants
   pink: "#ff00ff",
   cyan: "#00ffff",
+  // receipt variants
+  receipt: "#fdfbf7",
+  dark_ticket: "#111111",
 };
 
 export default function VariantSelector({ variants, selected, dispatch }: VariantSelectorProps) {
@@ -34,11 +37,10 @@ export default function VariantSelector({ variants, selected, dispatch }: Varian
               key={v}
               type="button"
               onClick={() => dispatch({ type: "SET_VARIANT", variant: v })}
-              className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
-                isActive
-                  ? "border-accent ring-2 ring-accent/30 text-text-primary"
-                  : "border-border-subtle text-text-muted hover:border-border-default"
-              }`}
+              className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${isActive
+                ? "border-accent ring-2 ring-accent/30 text-text-primary"
+                : "border-border-subtle text-text-muted hover:border-border-default"
+                }`}
             >
               <span
                 className="block h-3 w-3 rounded-full"

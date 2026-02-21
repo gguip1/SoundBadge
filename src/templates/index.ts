@@ -4,6 +4,7 @@ import { cleanTemplate } from "./clean";
 import { streamTemplate } from "./stream";
 import { terminalTemplate } from "./terminal";
 import { neonTemplate } from "./neon";
+import { receiptTemplate } from "./receipt";
 
 const TEMPLATES: Record<string, Template> = {
   badge: badgeTemplate,
@@ -11,6 +12,7 @@ const TEMPLATES: Record<string, Template> = {
   stream: streamTemplate,
   terminal: terminalTemplate,
   neon: neonTemplate,
+  receipt: receiptTemplate,
 };
 
 /** 기존 테마 이름 (card-renderer.ts 경유) */
