@@ -140,8 +140,8 @@ Vertical multi-track layout mimicking a store receipt or concert ticket.
 
 | Variant | Preview |
 |---------|---------|
-| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=receipt" alt="receipt variant" /> |
-| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=dark_ticket" alt="dark_ticket variant" /> |
+| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=receipt&v=1" alt="receipt variant" /> |
+| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=dark_ticket&v=1" alt="dark_ticket variant" /> |
 
 </details>
 
