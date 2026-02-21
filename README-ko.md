@@ -13,7 +13,11 @@
 **[NEW] Receipt 템플릿** — 영수증 감성으로 멀티트랙을 담아보세요!
 
 <a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
-  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt" alt="SoundBadge Demo - Receipt" />
+  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=1" alt="SoundBadge Demo - Receipt" />
+</a>
+
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
+  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&variant=dark_ticket" alt="SoundBadge Demo - Receipt" />
 </a>
 
 <br />
@@ -128,7 +132,7 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 라이브 공연 티켓이나 영수증을 모방한 세로형 멀티트랙 레이아웃.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt" alt="Receipt 템플릿" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=1" alt="Receipt 템플릿" />
 
 <details>
 <summary>색상 변형</summary>
