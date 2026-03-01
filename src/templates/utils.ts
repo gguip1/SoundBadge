@@ -33,6 +33,16 @@ export function estimateTextWidth(text: string, fontSize: number, charWidthRatio
   return units * fontSize * charWidthRatio;
 }
 
+/** 주어진 폭에 맞게 텍스트를 잘라내는 truncate */
+export function truncateToFit(text: string, maxWidth: number, fontSize: number, charWidthRatio = 0.55): string {
+  if (estimateTextWidth(text, fontSize, charWidthRatio) <= maxWidth) return text;
+  for (let i = text.length - 1; i > 0; i--) {
+    const t = text.slice(0, i) + "\u2026";
+    if (estimateTextWidth(t, fontSize, charWidthRatio) <= maxWidth) return t;
+  }
+  return "\u2026";
+}
+
 export function esc(str: string): string {
   return str
     .replace(/&/g, "&amp;")

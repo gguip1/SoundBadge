@@ -1,5 +1,5 @@
 import type { Template, TemplateRenderOptions } from "./types";
-import { truncate, esc, estimateTextWidth } from "./utils";
+import { truncate, esc, estimateTextWidth, truncateToFit } from "./utils";
 
 const VARIANTS: Record<string, { bg: string; text: string; muted: string; border: string }> = {
     receipt: {
@@ -114,13 +114,22 @@ export const receiptTemplate: Template = {
 `;
 
         // Tracks Render
+        const titleFontSizeTrack = 13;  // r-bold font-size
+        const subFontSize = 11;         // r-sub font-size
+        const priceWidth = 40;          // "1.00" 텍스트 여유 공간
+        const numWidth = 24;            // 번호(01, 02) 공간
+        const maxTrackTitleWidth = width - padding * 2 - numWidth - priceWidth;
+        const maxChannelWidth = width - padding * 2 - numWidth;
+
         tracks.forEach((track, index) => {
             const y = index * trackHeight;
             const numStr = (index + 1).toString().padStart(2, "0");
+            const titleText = truncateToFit(track.title, maxTrackTitleWidth, titleFontSizeTrack, 0.6);
+            const channelText = truncateToFit(track.channelName, maxChannelWidth, subFontSize, 0.6);
             svg += `
     <text x="${padding}" y="${y + 16}" class="r-font r-bold">${numStr}</text>
-    <text x="${padding + 24}" y="${y + 16}" class="r-font r-bold">${esc(truncate(track.title, 26))}</text>
-    <text x="${padding + 24}" y="${y + 34}" class="r-font r-sub">${esc(truncate(track.channelName, 30))}</text>
+    <text x="${padding + 24}" y="${y + 16}" class="r-font r-bold">${esc(titleText)}</text>
+    <text x="${padding + 24}" y="${y + 34}" class="r-font r-sub">${esc(channelText)}</text>
     <text x="${width - padding}" y="${y + 16}" class="r-font r-bold" text-anchor="end">1.00</text>
 `;
         });
