@@ -1,7 +1,7 @@
 import type { Theme, Pattern } from "@/themes/types";
 import type { LayoutConfig } from "@/layouts/types";
 import type { YouTubeMetadata } from "./youtube";
-import { fetchImageAsBase64, truncate, esc } from "@/templates/utils";
+import { fetchImageAsBase64, truncate, esc, estimateTextWidth } from "@/templates/utils";
 
 const MARQUEE_GAP = 80;
 const MARQUEE_SPEED = 50;
@@ -117,7 +117,7 @@ export async function renderCardSvg(options: CardOptions): Promise<string> {
     let tagX = textX;
     for (const tag of tags!) {
       const tagText = truncate(tag.trim(), 15);
-      const tagWidth = tagText.length * (subtitleSize * 0.55) + 16;
+      const tagWidth = estimateTextWidth(tagText, subtitleSize - 2) + 16;
       if (tagX + tagWidth > width - padding) break;
       svgContent += `  <rect x="${tagX}" y="${currentY}" width="${tagWidth}" height="${subtitleSize + 6}" rx="${(subtitleSize + 6) / 2}" fill="${esc(tokens.accent)}" opacity="0.15" />\n`;
       svgContent += `  <text x="${tagX + 8}" y="${currentY + subtitleSize + 1}" font-size="${subtitleSize - 2}" fill="${esc(tokens.accent)}" font-family="'Segoe UI', system-ui, sans-serif">${esc(tagText)}</text>\n`;
