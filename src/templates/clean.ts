@@ -1,7 +1,7 @@
 import type { Template, TemplateRenderOptions, TrackData } from "./types";
 import { LAYOUTS } from "@/layouts/types";
 import type { LayoutName } from "@/layouts/types";
-import { truncate, esc } from "./utils";
+import { truncate, esc, estimateTextWidth, truncateToFit } from "./utils";
 
 const ACCENT = "#6366f1";
 const BG = "#ffffff";
@@ -42,12 +42,9 @@ export const cleanTemplate: Template = {
 
     const textX = padding + thumbnailSize + padding;
     const textMaxWidth = width - textX - padding;
-    const titleCharWidth = titleSize * 0.55;
-    const maxTitleChars = Math.floor(textMaxWidth / titleCharWidth);
-    const maxSubChars = Math.floor(textMaxWidth / (subtitleSize * 0.55));
 
-    const titleNeedsScroll = track.title.length > maxTitleChars;
-    const titleFullWidth = track.title.length * titleCharWidth;
+    const titleFullWidth = estimateTextWidth(track.title, titleSize, 0.55);
+    const titleNeedsScroll = titleFullWidth > textMaxWidth;
 
     const lineHeight = 1.4;
     const totalTextHeight =
@@ -95,12 +92,12 @@ export const cleanTemplate: Template = {
       svg += `    </g>\n`;
       svg += `  </g>\n`;
     } else {
-      svg += `  <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${FG}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(truncate(track.title, maxTitleChars))}</text>\n`;
+      svg += `  <text x="${textX}" y="${currentY + titleSize}" font-size="${titleSize}" fill="${FG}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="bold">${esc(truncateToFit(track.title, textMaxWidth, titleSize, 0.55))}</text>\n`;
     }
     currentY += Math.round(titleSize * lineHeight);
 
     // channel
-    svg += `  <text x="${textX}" y="${currentY + subtitleSize}" font-size="${subtitleSize}" fill="${MUTED}" font-family="'Segoe UI', system-ui, sans-serif">${esc(truncate(track.channelName, maxSubChars))}</text>\n`;
+    svg += `  <text x="${textX}" y="${currentY + subtitleSize}" font-size="${subtitleSize}" fill="${MUTED}" font-family="'Segoe UI', system-ui, sans-serif">${esc(truncateToFit(track.channelName, textMaxWidth, subtitleSize, 0.55))}</text>\n`;
     currentY += Math.round(subtitleSize * lineHeight);
 
     // extra tracks

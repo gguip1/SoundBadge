@@ -1,5 +1,5 @@
 import type { Template, TemplateRenderOptions } from "./types";
-import { truncate, esc } from "./utils";
+import { truncate, esc, estimateTextWidth } from "./utils";
 
 const VARIANTS: Record<string, { left: string; text: string }> = {
   blue: { left: "#007ec6", text: "#fff" },
@@ -10,7 +10,9 @@ const VARIANTS: Record<string, { left: string; text: string }> = {
 };
 
 const CHAR_WIDTH = 6.5;
-const MAX_RIGHT_DISPLAY_CHARS = 40;
+const BADGE_FONT_SIZE = 11;
+const BADGE_CHAR_RATIO = 0.59; // CHAR_WIDTH / BADGE_FONT_SIZE
+const MAX_RIGHT_DISPLAY_WIDTH = 260; // ~40 ASCII chars display area
 const MARQUEE_GAP = 60;
 const MARQUEE_SPEED = 40;
 
@@ -35,22 +37,20 @@ export const badgeTemplate: Template = {
 
     const leftLabel = "\u266A Now Playing";
     const fullRight = `${track.title} - ${track.channelName}`;
-    const needsScroll = fullRight.length > MAX_RIGHT_DISPLAY_CHARS;
+    const fullTextWidth = estimateTextWidth(fullRight, BADGE_FONT_SIZE, BADGE_CHAR_RATIO);
+    const needsScroll = fullTextWidth > MAX_RIGHT_DISPLAY_WIDTH;
 
     const leftPad = 8;
     const rightPad = 8;
     const leftWidth = leftLabel.length * CHAR_WIDTH + leftPad * 2;
 
-    // 스크롤 시 표시 영역은 고정, 아닐 때는 텍스트 길이에 맞춤
-    const displayChars = needsScroll ? MAX_RIGHT_DISPLAY_CHARS : fullRight.length;
-    const rightWidth = displayChars * CHAR_WIDTH + rightPad * 2;
+    // 스크롤 시 표시 영역은 고정, 아닐 때는 텍스트 폭에 맞춤
+    const rightWidth = (needsScroll ? MAX_RIGHT_DISPLAY_WIDTH : Math.ceil(fullTextWidth)) + rightPad * 2;
     const totalWidth = leftWidth + rightWidth;
     const height = 28;
     const radius = 4;
 
     const rightLabel = needsScroll ? fullRight : truncate(fullRight, 50);
-    const fullTextWidth = fullRight.length * CHAR_WIDTH;
-    const overflow = fullTextWidth - (rightWidth - rightPad * 2);
 
     let defs = `    <clipPath id="badgeClip"><rect width="${totalWidth}" height="${height}" rx="${radius}" /></clipPath>\n`;
     let style = "";

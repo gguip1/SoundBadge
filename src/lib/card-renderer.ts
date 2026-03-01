@@ -1,7 +1,7 @@
 import type { Theme, Pattern } from "@/themes/types";
 import type { LayoutConfig } from "@/layouts/types";
 import type { YouTubeMetadata } from "./youtube";
-import { fetchImageAsBase64, truncate, esc, estimateTextWidth } from "@/templates/utils";
+import { fetchImageAsBase64, truncate, esc, estimateTextWidth, truncateToFit } from "@/templates/utils";
 
 const MARQUEE_GAP = 80;
 const MARQUEE_SPEED = 50;
@@ -42,16 +42,11 @@ export async function renderCardSvg(options: CardOptions): Promise<string> {
 
   let currentY = textStartY;
 
-  // 텍스트 truncation
-  const titleCharWidth = titleSize * 0.55;
-  const maxTitleChars = Math.floor(textMaxWidth / titleCharWidth);
-  const maxSubChars = Math.floor(textMaxWidth / (subtitleSize * 0.55));
-  const truncatedTitle = truncate(metadata.title, maxTitleChars);
-  const truncatedChannel = truncate(metadata.channelName, maxSubChars);
-
-  // 마키 스크롤 감지
-  const titleNeedsScroll = metadata.title.length > maxTitleChars;
-  const titleFullWidth = metadata.title.length * titleCharWidth;
+  // 텍스트 truncation (CJK 폭 반영)
+  const titleFullWidth = estimateTextWidth(metadata.title, titleSize, 0.55);
+  const titleNeedsScroll = titleFullWidth > textMaxWidth;
+  const truncatedTitle = truncateToFit(metadata.title, textMaxWidth, titleSize, 0.55);
+  const truncatedChannel = truncateToFit(metadata.channelName, textMaxWidth, subtitleSize, 0.55);
 
   // SVG 조립
   const defs = buildDefs(tokens, width, height, thumbX, thumbY, thumbnailSize, thumbRadius);

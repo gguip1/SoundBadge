@@ -1,5 +1,5 @@
 import type { Template, TemplateRenderOptions } from "./types";
-import { truncate, esc } from "./utils";
+import { truncate, esc, estimateTextWidth, truncateToFit } from "./utils";
 
 const VARIANTS: Record<string, { glow: string; bg: string }> = {
   green: { glow: "#00ff88", bg: "#0a0f0a" },
@@ -10,8 +10,7 @@ const VARIANTS: Record<string, { glow: string; bg: string }> = {
 const FONT = "'Segoe UI', system-ui, sans-serif";
 const EXTRA_TRACK_HEIGHT = 60;
 const TITLE_FONT_SIZE = 18;
-const TITLE_CHAR_WIDTH = TITLE_FONT_SIZE * 0.58;
-const TITLE_MAX_CHARS = 26;
+const TITLE_CHAR_RATIO = 0.58;
 const MARQUEE_GAP = 80;
 const MARQUEE_SPEED = 50;
 
@@ -49,10 +48,9 @@ export const neonTemplate: Template = {
     const textX = thumbX + thumbSize + pad;
     const textMaxWidth = width - textX - pad;
 
-    const titleNeedsScroll = track.title.length > TITLE_MAX_CHARS;
-    const titleText = titleNeedsScroll ? track.title : truncate(track.title, TITLE_MAX_CHARS);
-    const titleFullWidth = track.title.length * TITLE_CHAR_WIDTH;
-    const titleOverflow = titleFullWidth - textMaxWidth;
+    const titleFullWidth = estimateTextWidth(track.title, TITLE_FONT_SIZE, TITLE_CHAR_RATIO);
+    const titleNeedsScroll = titleFullWidth > textMaxWidth;
+    const titleText = titleNeedsScroll ? track.title : truncateToFit(track.title, textMaxWidth, TITLE_FONT_SIZE, TITLE_CHAR_RATIO);
 
     const titleY = thumbY + 28;
 
