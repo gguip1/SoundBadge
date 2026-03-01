@@ -1,12 +1,12 @@
 <div align="center">
 
-**English** | [한국어](README-ko.md)
+[English](README-en.md) | **한국어**
 
 # SoundBadge
 
-**Your code has a soundtrack. Show it.**
+**당신의 코드에도 사운드트랙이 있잖아요. 보여주세요.**
 
-Turn a YouTube link into a music taste badge for your GitHub profile.
+유튜브 링크 하나로 GitHub 프로필에 음악 취향 카드를 만들어보세요.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Deploy with Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)](https://sound-badge.vercel.app)
@@ -15,193 +15,193 @@ Turn a YouTube link into a music taste badge for your GitHub profile.
 
 ---
 
-Your GitHub profile says a lot about you — your languages, your contributions, your streak. But it says nothing about what's playing in your headphones right now.
+GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는 언어, 기여 기록, 커밋 스트릭. 근데 지금 이어폰에서 뭐가 흘러나오는지는 아무도 모르죠.
 
-**SoundBadge** fixes that. Paste a YouTube link, pick a style, and drop a live music card into your README. It renders on-the-fly as an SVG — no build step, no tokens, no auth.
+**SoundBadge**가 그걸 바꿔줍니다. 유튜브 링크를 붙여넣고, 스타일을 고르고, README에 음악 카드를 넣으세요. SVG로 실시간 렌더링됩니다 — 빌드도, 토큰도, 인증도 필요 없어요.
 
 ---
 
-## Quick Start
+## 빠른 시작
 
-**1.** Go to the [SoundBadge Builder](https://sound-badge.vercel.app), paste a YouTube URL, pick a theme, and copy the code.
+**1.** [SoundBadge 빌더](https://sound-badge.vercel.app)에서 유튜브 URL을 붙여넣고, 테마를 고르고, 코드를 복사하세요.
 
-**2.** Or just copy this directly:
+**2.** 또는 아래 코드를 바로 복사하세요:
 
 ```md
-![My Music](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream)
+![My Music](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream)
 ```
 
-**3.** Paste it into your GitHub `README.md`.
+**3.** GitHub `README.md`에 붙여넣기.
 
-That's it.
+끝.
 
 ---
 
-## Examples
+## 예시
 
-### Templates
+### 템플릿
 
-Five purpose-built templates — from minimal badges to full player UIs.
+5가지 템플릿 — 미니멀 배지부터 플레이어 UI까지.
 
 #### Badge
 
-One-line inline badge. Fits anywhere.
+한 줄짜리 인라인 배지. 어디든 들어갑니다.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge" alt="Badge template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge" alt="Badge 템플릿" />
 
 <details>
-<summary>Color variants</summary>
+<summary>색상 변형</summary>
 <br />
 
-| Variant | Preview |
-|---------|---------|
-| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=blue" alt="badge blue" /> |
-| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=green" alt="badge green" /> |
-| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=red" alt="badge red" /> |
-| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=purple" alt="badge purple" /> |
-| `orange` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=orange" alt="badge orange" /> |
+| 변형 | 미리보기 |
+|------|---------|
+| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&variant=blue" alt="badge blue" /> |
+| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&variant=green" alt="badge green" /> |
+| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&variant=red" alt="badge red" /> |
+| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&variant=purple" alt="badge purple" /> |
+| `orange` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&variant=orange" alt="badge orange" /> |
 
 </details>
 
 #### Clean
 
-A clean, minimal card. Supports all layouts and multi-track.
+깔끔한 기본 카드. 모든 레이아웃과 멀티트랙을 지원합니다.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=clean" alt="Clean template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean" alt="Clean 템플릿" />
 
 #### Stream
 
-Streaming player UI with animated equalizer and progress bar.
+스트리밍 플레이어 UI. 이퀄라이저 애니메이션과 프로그레스 바 포함.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream" alt="Stream template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream" alt="Stream 템플릿" />
 
 <details>
-<summary>Color variants</summary>
+<summary>색상 변형</summary>
 <br />
 
-| Variant | Preview |
-|---------|---------|
-| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=green" alt="stream green" /> |
-| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=purple" alt="stream purple" /> |
-| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=blue" alt="stream blue" /> |
-| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=pink" alt="stream pink" /> |
-| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=red" alt="stream red" /> |
+| 변형 | 미리보기 |
+|------|---------|
+| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&variant=green" alt="stream green" /> |
+| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&variant=purple" alt="stream purple" /> |
+| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&variant=blue" alt="stream blue" /> |
+| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&variant=pink" alt="stream pink" /> |
+| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&variant=red" alt="stream red" /> |
 
 </details>
 
 #### Terminal
 
-For the devs. Monospace font, terminal chrome, cursor blink.
+개발자를 위한 템플릿. 모노스페이스 폰트, 터미널 크롬, 커서 깜빡임.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=terminal" alt="Terminal template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=terminal" alt="Terminal 템플릿" />
 
 #### Neon
 
-Glowing neon with glassmorphism grid and pulsing border.
+네온 글로우 + 글래스모피즘 그리드 + 펄싱 보더.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon" alt="Neon template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon" alt="Neon 템플릿" />
 
 <details>
-<summary>Color variants</summary>
+<summary>색상 변형</summary>
 <br />
 
-| Variant | Preview |
-|---------|---------|
-| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon&variant=green" alt="neon green" /> |
-| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon&variant=pink" alt="neon pink" /> |
-| `cyan` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon&variant=cyan" alt="neon cyan" /> |
+| 변형 | 미리보기 |
+|------|---------|
+| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon&variant=green" alt="neon green" /> |
+| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon&variant=pink" alt="neon pink" /> |
+| `cyan` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon&variant=cyan" alt="neon cyan" /> |
 
 </details>
 
 #### Receipt
 
-Vertical multi-track layout mimicking a store receipt or concert ticket.
+라이브 공연 티켓이나 영수증을 모방한 세로형 멀티트랙 레이아웃.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=1" alt="Receipt template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=1" alt="Receipt 템플릿" />
 
 <details>
-<summary>Color variants</summary>
+<summary>색상 변형</summary>
 <br />
 
-| Variant | Preview |
-|---------|---------|
-| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=receipt&variant=receipt&v=1" alt="receipt variant" /> |
-| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=receipt&variant=dark_ticket&v=1" alt="dark_ticket variant" /> |
+| 변형 | 미리보기 |
+|------|---------|
+| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=receipt&v=1" alt="receipt variant" /> |
+| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=receipt&variant=dark_ticket&v=1" alt="dark_ticket variant" /> |
 
 </details>
 
 ---
 
-### Classic Themes
+### 클래식 테마
 
-Eight classic card themes with thumbnail, title, and channel info.
+썸네일, 제목, 채널 정보가 포함된 8가지 클래식 카드 테마.
 
 | | | |
 |:---:|:---:|:---:|
 | **Minimal** | **Mono** | **Pastel** |
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal" alt="minimal" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=mono" alt="mono" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=pastel" alt="pastel" /> |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=minimal" alt="minimal" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=mono" alt="mono" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=pastel" alt="pastel" /> |
 | **Sunset** | **Midnight** | **Glass** |
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=sunset" alt="sunset" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=midnight" alt="midnight" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=glass" alt="glass" /> |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=sunset" alt="sunset" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=midnight" alt="midnight" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=glass" alt="glass" /> |
 | **Retro** | **Neon (Legacy)** | |
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=retro" alt="retro" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon-legacy" alt="neon legacy" /> | |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=retro" alt="retro" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon-legacy" alt="neon legacy" /> | |
 
-> **Note:** The classic neon theme is now `neon-legacy` since `neon` refers to the new Neon template.
+> **참고:** 클래식 neon 테마는 새로운 Neon 템플릿과 구분하기 위해 `neon-legacy`로 변경되었습니다.
 
 ---
 
-## Customization
+## 커스터마이징
 
-### Layouts
+### 레이아웃
 
-Classic themes and the Clean template support three layout sizes:
+클래식 테마와 Clean 템플릿은 3가지 레이아웃 크기를 지원합니다:
 
 | Compact (320×80) | Regular (420×120) | Wide (600×160) |
 |:-:|:-:|:-:|
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal&layout=compact" alt="compact" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal&layout=regular" alt="regular" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal&layout=wide" alt="wide" /> |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=minimal&layout=compact" alt="compact" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=minimal&layout=regular" alt="regular" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=minimal&layout=wide" alt="wide" /> |
 
-### Tags & Labels
+### 태그 & 라벨
 
-Add context with tags and a custom label:
+태그와 커스텀 라벨로 맥락을 추가하세요:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=clean&tags=kpop,chill,vibe&label=Now%20Playing" alt="tags and label example" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean&tags=kpop,chill,vibe&label=%EC%A7%80%EA%B8%88%20%EB%93%A3%EB%8A%94%20%EC%A4%91" alt="태그와 라벨 예시" />
 
 ```
-?tags=kpop,chill,vibe&label=Now Playing
+?tags=kpop,chill,vibe&label=지금 듣는 중
 ```
 
-- **Tags**: Up to 3 comma-separated tags
-- **Label**: Up to 40 characters
+- **태그**: 콤마로 구분, 최대 3개
+- **라벨**: 최대 40자
 
-### Multi-Track
+### 멀티트랙
 
-### Multi-Track
+### 멀티트랙
 
-The `stream`, `terminal`, `neon`, `clean`, and `receipt` templates support multiple YouTube URLs — pass multiple `url` parameters:
+`stream`, `terminal`, `neon`, `clean`, `receipt` 템플릿은 여러 유튜브 URL을 지원합니다 — `url` 파라미터를 여러 번 전달하세요:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green" alt="multi-track example" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green" alt="멀티트랙 예시" />
 
 ```
 ?url=https://www.youtube.com/watch?v=VIDEO_1&url=https://www.youtube.com/watch?v=VIDEO_2&theme=stream
 ```
 
-Up to 5 tracks per card.
+카드당 최대 5개 트랙.
 
 ---
 
-## API Reference
+## API 레퍼런스
 
 ### `GET /api/card.svg`
 
-Dynamically generates an SVG card image.
+SVG 카드 이미지를 동적으로 생성합니다.
 
-| Parameter | Required | Default | Description |
-|-----------|:--------:|---------|-------------|
-| `url` | Yes | — | YouTube URL (video or playlist). Repeat for multi-track (`&url=...&url=...`). |
-| `theme` | No | `minimal` | Theme or template name (see [Examples](#examples)) |
-| `layout` | No | `regular` | Card size: `compact`, `regular`, or `wide` |
-| `tags` | No | — | Comma-separated tags (max 3) |
-| `label` | No | — | Card label text (max 40 chars) |
-| `variant` | No | — | Color variant for templates that support it |
+| 파라미터 | 필수 | 기본값 | 설명 |
+|---------|:----:|--------|------|
+| `url` | O | — | 유튜브 URL (영상 또는 재생목록). 멀티트랙 시 `&url=...&url=...`으로 반복. |
+| `theme` | X | `minimal` | 테마 또는 템플릿 이름 ([예시](#예시) 참고) |
+| `layout` | X | `regular` | 카드 크기: `compact`, `regular`, `wide` |
+| `tags` | X | — | 콤마로 구분된 태그 (최대 3개) |
+| `label` | X | — | 카드 라벨 텍스트 (최대 40자) |
+| `variant` | X | — | 지원하는 템플릿의 색상 변형 |
 
 **Base URL:**
 
@@ -209,17 +209,17 @@ Dynamically generates an SVG card image.
 https://sound-badge.vercel.app/api/card.svg
 ```
 
-**Theme values:**
+**테마 값:**
 
-| Type | Values |
-|------|--------|
-| Classic | `minimal`, `mono`, `neon-legacy`, `pastel`, `sunset`, `midnight`, `glass`, `retro` |
-| Templates | `badge`, `clean`, `stream`, `terminal`, `neon`, `receipt` |
+| 타입 | 값 |
+|------|-----|
+| 클래식 | `minimal`, `mono`, `neon-legacy`, `pastel`, `sunset`, `midnight`, `glass`, `retro` |
+| 템플릿 | `badge`, `clean`, `stream`, `terminal`, `neon`, `receipt` |
 
-**Variant values:**
+**변형 값:**
 
-| Template | Variants |
-|----------|----------|
+| 템플릿 | 변형 |
+|--------|------|
 | `badge` | `blue`, `green`, `red`, `purple`, `orange` |
 | `stream` | `green`, `purple`, `blue`, `pink`, `red` |
 | `neon` | `green`, `pink`, `cyan` |
@@ -227,105 +227,105 @@ https://sound-badge.vercel.app/api/card.svg
 
 ---
 
-## Use It in Your README
+## README에 넣는 법
 
 ### Markdown
 
 ```md
-![Now Playing](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream)
+![지금 듣는 중](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream)
 ```
 
-### HTML (recommended for more control)
+### HTML (더 세밀한 제어가 필요할 때)
 
 ```html
-<a href="https://www.youtube.com/watch?v=LJny-d5sJ_8">
-  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=stream" alt="Now Playing" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
+  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&amp;theme=stream" alt="지금 듣는 중" />
 </a>
 ```
 
-> Wrapping with `<a>` makes the card clickable — it opens the YouTube video.
+> `<a>`로 감싸면 카드 클릭 시 유튜브로 이동합니다.
 
-### Dark / Light Mode
+### 다크 / 라이트 모드 대응
 
-GitHub supports theme-specific images. Show different cards for dark and light mode:
+GitHub은 테마별 이미지를 지원합니다. 다크/라이트 모드에 따라 다른 카드를 보여주세요:
 
 ```html
-<a href="https://www.youtube.com/watch?v=LJny-d5sJ_8">
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=mono" />
-    <source media="(prefers-color-scheme: light)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=minimal" />
-    <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=minimal" alt="Now Playing" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&amp;theme=mono" />
+    <source media="(prefers-color-scheme: light)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&amp;theme=minimal" />
+    <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&amp;theme=minimal" alt="지금 듣는 중" />
   </picture>
 </a>
 ```
 
 ---
 
-## Try the Builder
+## 빌더 사용하기
 
-Don't want to write URLs by hand? Use the **[SoundBadge Builder](https://sound-badge.vercel.app)**.
+URL을 직접 쓰기 귀찮다면 [SoundBadge 빌더](https://sound-badge.vercel.app)를 이용하세요.
 
-Paste a YouTube link, pick a theme, tweak the options, and copy the ready-to-use code for your README.
+유튜브 링크 붙여넣기 → 테마 선택 → 옵션 조정 → 코드 복사. 끝.
 
 ---
 
-## Self-Hosting
+## 셀프 호스팅
 
-### Requirements
+### 요구 사항
 
 - Node.js 18+
 - [bun](https://bun.sh)
-- [YouTube Data API v3 key](https://console.cloud.google.com/apis/library/youtube.googleapis.com)
+- [YouTube Data API v3 키](https://console.cloud.google.com/apis/library/youtube.googleapis.com)
 
-### Setup
+### 설치
 
 ```bash
-# 1. Clone the repo
+# 1. 저장소 클론
 git clone https://github.com/gguip1/SoundBadge.git
 cd SoundBadge
 
-# 2. Install dependencies
+# 2. 의존성 설치
 bun install
 
-# 3. Set up environment variables
+# 3. 환경 변수 설정
 cp .env.example .env.local
-# Edit .env.local and add your YouTube API key
+# .env.local에 YouTube API 키 입력
 
-# 4. Start development server
+# 4. 개발 서버 실행
 bun dev
 ```
 
-### Environment Variables
+### 환경 변수
 
-| Variable | Required | Description |
-|----------|:--------:|-------------|
-| `YOUTUBE_API_KEY` | Yes | YouTube Data API v3 key |
+| 변수 | 필수 | 설명 |
+|------|:----:|------|
+| `YOUTUBE_API_KEY` | O | YouTube Data API v3 키 |
 
-### Deploy to Vercel
+### Vercel 배포
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gguip1/SoundBadge&env=YOUTUBE_API_KEY&envDescription=YouTube%20Data%20API%20v3%20key)
 
 ---
 
-## Tech Stack
+## 기술 스택
 
 - **[Next.js 16](https://nextjs.org)** — App Router + Edge Runtime
-- **TypeScript** — Strict mode
-- **Tailwind CSS 4** — Builder UI styling
-- **Vercel Edge Functions** — Low-latency SVG generation
-- **YouTube Data API v3** — Video metadata
+- **TypeScript** — Strict 모드
+- **Tailwind CSS 4** — 빌더 UI 스타일링
+- **Vercel Edge Functions** — 저지연 SVG 생성
+- **YouTube Data API v3** — 영상 메타데이터
 
 ---
 
-## Contributing
+## 기여하기
 
-Contributions welcome — new themes, templates, bug fixes, anything goes.
+기여는 언제든 환영합니다! 새 테마, 템플릿, 버그 수정 등 무엇이든 좋습니다.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+자세한 내용은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고해주세요.
 
 ---
 
-## License
+## 라이선스
 
 [Apache License 2.0](LICENSE)
 
@@ -333,8 +333,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 <div align="center">
 
-**Stop hiding your music taste behind your commit history.**
+**커밋 기록 뒤에 음악 취향을 숨기지 마세요.**
 
-[Try the Builder](https://sound-badge.vercel.app)
+[빌더 사용해보기](https://sound-badge.vercel.app)
 
 </div>
