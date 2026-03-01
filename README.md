@@ -47,7 +47,7 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 한 줄짜리 인라인 배지. 어디든 들어갑니다.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&v=2" alt="Badge 템플릿" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=badge&v=2" alt="Badge 템플릿" /></a>
 
 <details>
 <summary>색상 변형</summary>
@@ -67,13 +67,13 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 깔끔한 기본 카드. 모든 레이아웃과 멀티트랙을 지원합니다.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean&v=2" alt="Clean 템플릿" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean&v=2" alt="Clean 템플릿" /></a>
 
 #### Stream
 
 스트리밍 플레이어 UI. 이퀄라이저 애니메이션과 프로그레스 바 포함.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&v=2" alt="Stream 템플릿" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=stream&v=2" alt="Stream 템플릿" /></a>
 
 <details>
 <summary>색상 변형</summary>
@@ -93,13 +93,13 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 개발자를 위한 템플릿. 모노스페이스 폰트, 터미널 크롬, 커서 깜빡임.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=terminal&v=2" alt="Terminal 템플릿" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=terminal&v=2" alt="Terminal 템플릿" /></a>
 
 #### Neon
 
 네온 글로우 + 글래스모피즘 그리드 + 펄싱 보더.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon&v=2" alt="Neon 템플릿" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=neon&v=2" alt="Neon 템플릿" /></a>
 
 <details>
 <summary>색상 변형</summary>
@@ -117,7 +117,7 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 라이브 공연 티켓이나 영수증을 모방한 세로형 멀티트랙 레이아웃.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=2" alt="Receipt 템플릿" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=2" alt="Receipt 템플릿" /></a>
 
 <details>
 <summary>색상 변형</summary>
@@ -161,9 +161,9 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 
 ### 태그 & 라벨
 
-태그와 커스텀 라벨로 맥락을 추가하세요:
+클래식 테마에서 태그와 커스텀 라벨로 맥락을 추가할 수 있습니다:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=clean&tags=kpop,chill,vibe&label=%EC%A7%80%EA%B8%88%20%EB%93%A3%EB%8A%94%20%EC%A4%91&v=2" alt="태그와 라벨 예시" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&theme=minimal&tags=kpop,chill,vibe&label=%EC%A7%80%EA%B8%88%20%EB%93%A3%EB%8A%94%20%EC%A4%91&v=2" alt="태그와 라벨 예시" /></a>
 
 ```
 ?tags=kpop,chill,vibe&label=지금 듣는 중
@@ -172,13 +172,13 @@ GitHub 프로필은 당신에 대해 많은 걸 보여줍니다 — 사용하는
 - **태그**: 콤마로 구분, 최대 3개
 - **라벨**: 최대 40자
 
-### 멀티트랙
+> 태그와 라벨은 클래식 테마에서만 지원됩니다. Receipt 템플릿은 라벨만 지원합니다.
 
 ### 멀티트랙
 
 `stream`, `terminal`, `neon`, `clean`, `receipt` 템플릿은 여러 유튜브 URL을 지원합니다 — `url` 파라미터를 여러 번 전달하세요:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green&v=2" alt="멀티트랙 예시" />
+<a href="https://www.youtube.com/watch?v=27KI1NUxpFA"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green&v=2" alt="멀티트랙 예시" /></a>
 
 ```
 ?url=https://www.youtube.com/watch?v=VIDEO_1&url=https://www.youtube.com/watch?v=VIDEO_2&theme=stream

@@ -47,7 +47,7 @@ Five purpose-built templates — from minimal badges to full player UIs.
 
 One-line inline badge. Fits anywhere.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&v=2" alt="Badge template" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&v=2" alt="Badge template" /></a>
 
 <details>
 <summary>Color variants</summary>
@@ -67,13 +67,13 @@ One-line inline badge. Fits anywhere.
 
 A clean, minimal card. Supports all layouts and multi-track.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=clean&v=2" alt="Clean template" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=clean&v=2" alt="Clean template" /></a>
 
 #### Stream
 
 Streaming player UI with animated equalizer and progress bar.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&v=2" alt="Stream template" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&v=2" alt="Stream template" /></a>
 
 <details>
 <summary>Color variants</summary>
@@ -93,13 +93,13 @@ Streaming player UI with animated equalizer and progress bar.
 
 For the devs. Monospace font, terminal chrome, cursor blink.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=terminal&v=2" alt="Terminal template" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=terminal&v=2" alt="Terminal template" /></a>
 
 #### Neon
 
 Glowing neon with glassmorphism grid and pulsing border.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon&v=2" alt="Neon template" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon&v=2" alt="Neon template" /></a>
 
 <details>
 <summary>Color variants</summary>
@@ -117,7 +117,7 @@ Glowing neon with glassmorphism grid and pulsing border.
 
 Vertical multi-track layout mimicking a store receipt or concert ticket.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=2" alt="Receipt template" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=2" alt="Receipt template" /></a>
 
 <details>
 <summary>Color variants</summary>
@@ -161,9 +161,9 @@ Classic themes and the Clean template support three layout sizes:
 
 ### Tags & Labels
 
-Add context with tags and a custom label:
+Add context with tags and a custom label on classic themes:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=clean&tags=kpop,chill,vibe&label=Now%20Playing&v=2" alt="tags and label example" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=minimal&tags=kpop,chill,vibe&label=Now%20Playing&v=2" alt="tags and label example" /></a>
 
 ```
 ?tags=kpop,chill,vibe&label=Now Playing
@@ -172,13 +172,13 @@ Add context with tags and a custom label:
 - **Tags**: Up to 3 comma-separated tags
 - **Label**: Up to 40 characters
 
-### Multi-Track
+> Tags and labels are only supported on classic themes. The Receipt template supports labels only.
 
 ### Multi-Track
 
 The `stream`, `terminal`, `neon`, `clean`, and `receipt` templates support multiple YouTube URLs — pass multiple `url` parameters:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green&v=2" alt="multi-track example" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU"><img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green&v=2" alt="multi-track example" /></a>
 
 ```
 ?url=https://www.youtube.com/watch?v=VIDEO_1&url=https://www.youtube.com/watch?v=VIDEO_2&theme=stream
