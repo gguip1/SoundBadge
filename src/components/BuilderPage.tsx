@@ -52,6 +52,12 @@ export default function BuilderPage() {
   const showLayout = capabilities.supportsLayout;
   const showVariant = capabilities.variants.length > 0;
 
+  // First valid YouTube URL for embed link
+  const firstYoutubeUrl = useMemo(
+    () => state.urls.find((u) => u.trim()) || undefined,
+    [state.urls],
+  );
+
   return (
     <div className="min-h-screen bg-surface text-text-primary">
       {/* Header */}
@@ -117,7 +123,7 @@ export default function BuilderPage() {
           {/* Right: Preview (sticky) */}
           <div className="flex-1 lg:sticky lg:top-8 lg:self-start space-y-6">
             <CardPreview previewUrl={debouncedPreviewUrl} />
-            <EmbedCode embedUrl={embedUrl} />
+            <EmbedCode embedUrl={embedUrl} youtubeUrl={firstYoutubeUrl} />
           </div>
         </div>
       </main>

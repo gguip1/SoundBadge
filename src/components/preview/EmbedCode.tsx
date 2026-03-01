@@ -4,20 +4,22 @@ import { useState } from "react";
 
 interface EmbedCodeProps {
   embedUrl: string | null;
+  youtubeUrl?: string;
 }
 
 type Tab = "markdown" | "html" | "url";
 
-export default function EmbedCode({ embedUrl }: EmbedCodeProps) {
+export default function EmbedCode({ embedUrl, youtubeUrl }: EmbedCodeProps) {
   const [tab, setTab] = useState<Tab>("markdown");
   const [copied, setCopied] = useState(false);
 
   const disabled = !embedUrl;
+  const linkUrl = youtubeUrl || embedUrl;
 
   const code = embedUrl
     ? {
-        markdown: `[![SoundBadge](${embedUrl})](${embedUrl})`,
-        html: `<a href="${embedUrl}"><img src="${embedUrl}" alt="SoundBadge" /></a>`,
+        markdown: `[![SoundBadge](${embedUrl})](${linkUrl})`,
+        html: `<a href="${linkUrl}"><img src="${embedUrl}" alt="SoundBadge" /></a>`,
         url: embedUrl,
       }
     : { markdown: "", html: "", url: "" };
