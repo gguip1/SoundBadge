@@ -1,5 +1,5 @@
 import type { Template, TemplateRenderOptions } from "./types";
-import { truncate, esc } from "./utils";
+import { truncate, esc, estimateTextWidth } from "./utils";
 
 const VARIANTS: Record<string, { bg: string; text: string; muted: string; border: string }> = {
     receipt: {
@@ -24,6 +24,8 @@ export const receiptTemplate: Template = {
         category: "visual",
         supportsLayout: false,
         supportsMultiTrack: true,
+        supportsTags: false,
+        supportsLabel: true,
         maxTracks: 5,
         variants: Object.keys(VARIANTS),
         previewDimensions: { width: 340, height: 400 }, // Variable height, but preview size
@@ -42,7 +44,18 @@ export const receiptTemplate: Template = {
         const height = headerHeight + (tracks.length * trackHeight) + footerHeight;
 
         const font = "'Courier New', Courier, monospace";
-        const titleText = label || "SOUNDBADGE STORE";
+        const rawTitle = label || "SOUNDBADGE STORE";
+        const maxLabelWidth = width - padding * 2;
+        // 라벨이 길면 폰트 축소, 그래도 넘으면 truncate
+        let titleFontSize = 20;
+        if (estimateTextWidth(rawTitle, titleFontSize, 0.6) > maxLabelWidth) {
+            titleFontSize = 16;
+        }
+        if (estimateTextWidth(rawTitle, titleFontSize, 0.6) > maxLabelWidth) {
+            titleFontSize = 13;
+        }
+        const maxTitleChars = Math.floor(maxLabelWidth / (titleFontSize * 0.6));
+        const titleText = truncate(rawTitle, maxTitleChars);
         const date = new Date().toISOString().split('T')[0];
 
         // 다각형 테두리(지그재그) 계산 로직
@@ -91,7 +104,7 @@ export const receiptTemplate: Template = {
   <polygon points="${polygonPoints}" fill="${colors.bg}" filter="url(#receipt-shadow)" />
 
   <!-- Header -->
-  <text x="${width / 2}" y="${padding + 16}" class="r-font r-title">${esc(titleText)}</text>
+  <text x="${width / 2}" y="${padding + 16}" class="r-font" font-size="${titleFontSize}" font-weight="bold" text-anchor="middle" letter-spacing="2px">${esc(titleText)}</text>
   <text x="${width / 2}" y="${padding + 34}" class="r-font r-date">${date} • RECEIPT</text>
   
   <line x1="${padding}" y1="${headerHeight}" x2="${width - padding}" y2="${headerHeight}" class="dash-line" />
