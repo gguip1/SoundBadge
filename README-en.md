@@ -1,6 +1,6 @@
 <div align="center">
 
-**English** | [한국어](README.md)
+[한국어](README.md) | **English**
 
 # SoundBadge
 
@@ -28,7 +28,7 @@ Your GitHub profile says a lot about you — your languages, your contributions,
 **2.** Or just copy this directly:
 
 ```md
-![My Music](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream)
+![My Music](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream)
 ```
 
 **3.** Paste it into your GitHub `README.md`.
@@ -47,7 +47,7 @@ Five purpose-built templates — from minimal badges to full player UIs.
 
 One-line inline badge. Fits anywhere.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge" alt="Badge template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&v=2" alt="Badge template" />
 
 <details>
 <summary>Color variants</summary>
@@ -55,11 +55,11 @@ One-line inline badge. Fits anywhere.
 
 | Variant | Preview |
 |---------|---------|
-| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=blue" alt="badge blue" /> |
-| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=green" alt="badge green" /> |
-| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=red" alt="badge red" /> |
-| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=purple" alt="badge purple" /> |
-| `orange` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=badge&variant=orange" alt="badge orange" /> |
+| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&variant=blue&v=2" alt="badge blue" /> |
+| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&variant=green&v=2" alt="badge green" /> |
+| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&variant=red&v=2" alt="badge red" /> |
+| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&variant=purple&v=2" alt="badge purple" /> |
+| `orange` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=badge&variant=orange&v=2" alt="badge orange" /> |
 
 </details>
 
@@ -67,13 +67,13 @@ One-line inline badge. Fits anywhere.
 
 A clean, minimal card. Supports all layouts and multi-track.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=clean" alt="Clean template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=clean&v=2" alt="Clean template" />
 
 #### Stream
 
 Streaming player UI with animated equalizer and progress bar.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream" alt="Stream template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&v=2" alt="Stream template" />
 
 <details>
 <summary>Color variants</summary>
@@ -81,11 +81,11 @@ Streaming player UI with animated equalizer and progress bar.
 
 | Variant | Preview |
 |---------|---------|
-| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=green" alt="stream green" /> |
-| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=purple" alt="stream purple" /> |
-| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=blue" alt="stream blue" /> |
-| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=pink" alt="stream pink" /> |
-| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream&variant=red" alt="stream red" /> |
+| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&variant=green&v=2" alt="stream green" /> |
+| `purple` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&variant=purple&v=2" alt="stream purple" /> |
+| `blue` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&variant=blue&v=2" alt="stream blue" /> |
+| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&variant=pink&v=2" alt="stream pink" /> |
+| `red` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream&variant=red&v=2" alt="stream red" /> |
 
 </details>
 
@@ -93,13 +93,13 @@ Streaming player UI with animated equalizer and progress bar.
 
 For the devs. Monospace font, terminal chrome, cursor blink.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=terminal" alt="Terminal template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=terminal&v=2" alt="Terminal template" />
 
 #### Neon
 
 Glowing neon with glassmorphism grid and pulsing border.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon" alt="Neon template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon&v=2" alt="Neon template" />
 
 <details>
 <summary>Color variants</summary>
@@ -107,9 +107,9 @@ Glowing neon with glassmorphism grid and pulsing border.
 
 | Variant | Preview |
 |---------|---------|
-| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon&variant=green" alt="neon green" /> |
-| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon&variant=pink" alt="neon pink" /> |
-| `cyan` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon&variant=cyan" alt="neon cyan" /> |
+| `green` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon&variant=green&v=2" alt="neon green" /> |
+| `pink` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon&variant=pink&v=2" alt="neon pink" /> |
+| `cyan` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon&variant=cyan&v=2" alt="neon cyan" /> |
 
 </details>
 
@@ -117,7 +117,7 @@ Glowing neon with glassmorphism grid and pulsing border.
 
 Vertical multi-track layout mimicking a store receipt or concert ticket.
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=1" alt="Receipt template" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=2" alt="Receipt template" />
 
 <details>
 <summary>Color variants</summary>
@@ -125,8 +125,8 @@ Vertical multi-track layout mimicking a store receipt or concert ticket.
 
 | Variant | Preview |
 |---------|---------|
-| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=receipt&variant=receipt&v=1" alt="receipt variant" /> |
-| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=receipt&variant=dark_ticket&v=1" alt="dark_ticket variant" /> |
+| `receipt` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=receipt&variant=receipt&v=2" alt="receipt variant" /> |
+| `dark_ticket` | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=receipt&variant=dark_ticket&v=2" alt="dark_ticket variant" /> |
 
 </details>
 
@@ -139,11 +139,11 @@ Eight classic card themes with thumbnail, title, and channel info.
 | | | |
 |:---:|:---:|:---:|
 | **Minimal** | **Mono** | **Pastel** |
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal" alt="minimal" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=mono" alt="mono" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=pastel" alt="pastel" /> |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=minimal&v=2" alt="minimal" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=mono&v=2" alt="mono" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=pastel&v=2" alt="pastel" /> |
 | **Sunset** | **Midnight** | **Glass** |
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=sunset" alt="sunset" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=midnight" alt="midnight" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=glass" alt="glass" /> |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=sunset&v=2" alt="sunset" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=midnight&v=2" alt="midnight" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=glass&v=2" alt="glass" /> |
 | **Retro** | **Neon (Legacy)** | |
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=retro" alt="retro" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=neon-legacy" alt="neon legacy" /> | |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=retro&v=2" alt="retro" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=neon-legacy&v=2" alt="neon legacy" /> | |
 
 > **Note:** The classic neon theme is now `neon-legacy` since `neon` refers to the new Neon template.
 
@@ -157,13 +157,13 @@ Classic themes and the Clean template support three layout sizes:
 
 | Compact (320×80) | Regular (420×120) | Wide (600×160) |
 |:-:|:-:|:-:|
-| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal&layout=compact" alt="compact" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal&layout=regular" alt="regular" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=minimal&layout=wide" alt="wide" /> |
+| <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=minimal&layout=compact&v=2" alt="compact" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=minimal&layout=regular&v=2" alt="regular" /> | <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=minimal&layout=wide&v=2" alt="wide" /> |
 
 ### Tags & Labels
 
 Add context with tags and a custom label:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=clean&tags=kpop,chill,vibe&label=Now%20Playing" alt="tags and label example" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=clean&tags=kpop,chill,vibe&label=Now%20Playing&v=2" alt="tags and label example" />
 
 ```
 ?tags=kpop,chill,vibe&label=Now Playing
@@ -178,7 +178,7 @@ Add context with tags and a custom label:
 
 The `stream`, `terminal`, `neon`, `clean`, and `receipt` templates support multiple YouTube URLs — pass multiple `url` parameters:
 
-<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green" alt="multi-track example" />
+<img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=stream&variant=green&v=2" alt="multi-track example" />
 
 ```
 ?url=https://www.youtube.com/watch?v=VIDEO_1&url=https://www.youtube.com/watch?v=VIDEO_2&theme=stream
@@ -232,14 +232,14 @@ https://sound-badge.vercel.app/api/card.svg
 ### Markdown
 
 ```md
-![Now Playing](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&theme=stream)
+![Now Playing](https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&theme=stream)
 ```
 
 ### HTML (recommended for more control)
 
 ```html
-<a href="https://www.youtube.com/watch?v=LJny-d5sJ_8">
-  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=stream" alt="Now Playing" />
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU">
+  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&amp;theme=stream" alt="Now Playing" />
 </a>
 ```
 
@@ -250,11 +250,11 @@ https://sound-badge.vercel.app/api/card.svg
 GitHub supports theme-specific images. Show different cards for dark and light mode:
 
 ```html
-<a href="https://www.youtube.com/watch?v=LJny-d5sJ_8">
+<a href="https://www.youtube.com/watch?v=pjyigegIZKU">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=mono" />
-    <source media="(prefers-color-scheme: light)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=minimal" />
-    <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=LJny-d5sJ_8&amp;theme=minimal" alt="Now Playing" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&amp;theme=mono" />
+    <source media="(prefers-color-scheme: light)" srcset="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&amp;theme=minimal" />
+    <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=pjyigegIZKU&amp;theme=minimal" alt="Now Playing" />
   </picture>
 </a>
 ```
