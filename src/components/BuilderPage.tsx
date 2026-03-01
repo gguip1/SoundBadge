@@ -116,6 +116,8 @@ export default function BuilderPage() {
             <OptionsInput
               tags={state.tags}
               label={state.label}
+              disableTags={!capabilities.supportsTags}
+              disableLabel={!capabilities.supportsLabel}
               dispatch={dispatch}
             />
           </div>

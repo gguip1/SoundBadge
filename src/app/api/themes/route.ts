@@ -19,6 +19,8 @@ export async function GET() {
     description: m.description,
     category: m.category,
     supportsMultiTrack: m.supportsMultiTrack,
+    supportsTags: m.supportsTags,
+    supportsLabel: m.supportsLabel,
     maxTracks: m.maxTracks,
     variants: m.variants,
     previewDimensions: m.previewDimensions,

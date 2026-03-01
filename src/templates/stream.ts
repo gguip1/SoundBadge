@@ -27,6 +27,8 @@ export const streamTemplate: Template = {
     category: "player",
     supportsLayout: false,
     supportsMultiTrack: true,
+    supportsTags: false,
+    supportsLabel: false,
     maxTracks: 5,
     variants: Object.keys(VARIANTS),
     previewDimensions: { width: 480, height: 160 },

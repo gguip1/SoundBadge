@@ -20,13 +20,15 @@ export const cleanTemplate: Template = {
     category: "simple",
     supportsLayout: true,
     supportsMultiTrack: true,
+    supportsTags: false,
+    supportsLabel: false,
     maxTracks: 5,
     variants: [],
     previewDimensions: { width: 420, height: 120 },
   },
 
   render(options: TemplateRenderOptions): string {
-    const { track, tracks, layout, tags, label } = options;
+    const { track, tracks, layout } = options;
     const layoutConfig = LAYOUTS[layout] ?? LAYOUTS.regular;
     const { width, padding, thumbnailSize, titleSize, subtitleSize } = layoutConfig;
 
@@ -47,14 +49,10 @@ export const cleanTemplate: Template = {
     const titleNeedsScroll = track.title.length > maxTitleChars;
     const titleFullWidth = track.title.length * titleCharWidth;
 
-    const hasLabel = !!label;
-    const hasTags = tags && tags.length > 0;
     const lineHeight = 1.4;
     const totalTextHeight =
-      (hasLabel ? subtitleSize * lineHeight : 0) +
       titleSize * lineHeight +
-      subtitleSize * lineHeight +
-      (hasTags ? subtitleSize * lineHeight : 0);
+      subtitleSize * lineHeight;
     let currentY = Math.round((layoutConfig.height - totalTextHeight) / 2);
 
     let svg = "";
@@ -86,12 +84,6 @@ export const cleanTemplate: Template = {
       svg += `  <text x="${thumbX + thumbnailSize / 2}" y="${thumbY + thumbnailSize / 2 + 6}" font-size="20" fill="${ACCENT}" text-anchor="middle" font-family="system-ui">&#9835;</text>\n`;
     }
 
-    // label
-    if (hasLabel) {
-      svg += `  <text x="${textX}" y="${currentY + subtitleSize}" font-size="${subtitleSize - 1}" fill="${ACCENT}" font-family="'Segoe UI', system-ui, sans-serif" font-weight="600" letter-spacing="0.5">${esc(truncate(label!, 30).toUpperCase())}</text>\n`;
-      currentY += Math.round(subtitleSize * lineHeight);
-    }
-
     // title (with continuous marquee if overflows)
     if (titleNeedsScroll) {
       const loopDist = Math.ceil(titleFullWidth + MARQUEE_GAP);
@@ -110,20 +102,6 @@ export const cleanTemplate: Template = {
     // channel
     svg += `  <text x="${textX}" y="${currentY + subtitleSize}" font-size="${subtitleSize}" fill="${MUTED}" font-family="'Segoe UI', system-ui, sans-serif">${esc(truncate(track.channelName, maxSubChars))}</text>\n`;
     currentY += Math.round(subtitleSize * lineHeight);
-
-    // tags
-    if (hasTags) {
-      currentY += 2;
-      let tagX = textX;
-      for (const tag of tags!) {
-        const tagText = truncate(tag.trim(), 15);
-        const tagWidth = tagText.length * (subtitleSize * 0.55) + 16;
-        if (tagX + tagWidth > width - padding) break;
-        svg += `  <rect x="${tagX}" y="${currentY}" width="${tagWidth}" height="${subtitleSize + 6}" rx="${(subtitleSize + 6) / 2}" fill="${ACCENT}" opacity="0.1" />\n`;
-        svg += `  <text x="${tagX + 8}" y="${currentY + subtitleSize + 1}" font-size="${subtitleSize - 2}" fill="${ACCENT}" font-family="'Segoe UI', system-ui, sans-serif">${esc(tagText)}</text>\n`;
-        tagX += tagWidth + 6;
-      }
-    }
 
     // extra tracks
     if (extraTracks.length > 0) {

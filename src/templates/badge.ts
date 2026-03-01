@@ -22,6 +22,8 @@ export const badgeTemplate: Template = {
     category: "simple",
     supportsLayout: false,
     supportsMultiTrack: false,
+    supportsTags: false,
+    supportsLabel: false,
     maxTracks: 1,
     variants: Object.keys(VARIANTS),
     previewDimensions: { width: 300, height: 28 },

@@ -19,6 +19,8 @@ export const terminalTemplate: Template = {
     category: "developer",
     supportsLayout: false,
     supportsMultiTrack: true,
+    supportsTags: false,
+    supportsLabel: false,
     maxTracks: 5,
     variants: [],
     previewDimensions: { width: 480, height: 178 },

@@ -38,6 +38,8 @@ export interface TemplateMeta {
   description: string;
   category: string;
   supportsMultiTrack: boolean;
+  supportsTags: boolean;
+  supportsLabel: boolean;
   maxTracks: number;
   variants: string[];
   previewDimensions: { width: number; height: number };
@@ -50,6 +52,8 @@ export interface ThemesResponse {
 
 export interface StyleCapabilities {
   supportsLayout: boolean;
+  supportsTags: boolean;
+  supportsLabel: boolean;
   maxTracks: number;
   variants: string[];
   previewDimensions: { width: number; height: number };
@@ -190,6 +194,8 @@ export function getStyleCapabilities(
   if (!themes) {
     return {
       supportsLayout: true,
+      supportsTags: true,
+      supportsLabel: true,
       maxTracks: 1,
       variants: [],
       previewDimensions: { width: 420, height: 120 },
@@ -201,6 +207,8 @@ export function getStyleCapabilities(
     if (tmpl) {
       return {
         supportsLayout: "supportsLayout" in tmpl ? (tmpl as TemplateMeta & { supportsLayout?: boolean }).supportsLayout ?? false : false,
+        supportsTags: tmpl.supportsTags ?? false,
+        supportsLabel: tmpl.supportsLabel ?? false,
         maxTracks: tmpl.maxTracks,
         variants: tmpl.variants,
         previewDimensions: tmpl.previewDimensions,
@@ -208,9 +216,11 @@ export function getStyleCapabilities(
     }
   }
 
-  // Classic themes: always support layout, single track, no variants
+  // Classic themes: always support layout, tags, label, single track, no variants
   return {
     supportsLayout: true,
+    supportsTags: true,
+    supportsLabel: true,
     maxTracks: 1,
     variants: [],
     previewDimensions: { width: 420, height: 120 },

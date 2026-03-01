@@ -23,6 +23,8 @@ export const neonTemplate: Template = {
     category: "visual",
     supportsLayout: false,
     supportsMultiTrack: true,
+    supportsTags: false,
+    supportsLabel: false,
     maxTracks: 5,
     variants: Object.keys(VARIANTS),
     previewDimensions: { width: 480, height: 180 },

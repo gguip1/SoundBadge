@@ -26,6 +26,8 @@ export interface TemplateMeta {
   category: TemplateCategory;
   supportsLayout: boolean;
   supportsMultiTrack: boolean;
+  supportsTags: boolean;
+  supportsLabel: boolean;
   maxTracks: number;
   variants: string[];
   previewDimensions: { width: number; height: number };
