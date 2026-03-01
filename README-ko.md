@@ -8,21 +8,6 @@
 
 유튜브 링크 하나로 GitHub 프로필에 음악 취향 카드를 만들어보세요.
 
-<br />
-
-**[NEW] Receipt 템플릿** — 영수증 감성으로 멀티트랙을 담아보세요!
-
-<a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
-  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&v=1" alt="SoundBadge Demo - Receipt" />
-</a>
-
-<a href="https://www.youtube.com/watch?v=27KI1NUxpFA">
-  <img src="https://sound-badge.vercel.app/api/card.svg?url=https://www.youtube.com/watch?v=27KI1NUxpFA&url=https://www.youtube.com/watch?v=jfKfPfyJRdk&theme=receipt&variant=dark_ticket" alt="SoundBadge Demo - Receipt" />
-</a>
-
-<br />
-<br />
-
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Deploy with Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)](https://sound-badge.vercel.app)
 
