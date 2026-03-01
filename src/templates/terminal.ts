@@ -9,7 +9,7 @@ const ORANGE = "#ce9178";
 const WHITE = "#d4d4d4";
 const GRAY = "#6a6a6a";
 const FONT = "Menlo, 'Cascadia Code', Consolas, monospace";
-const EXTRA_TRACK_HEIGHT = 52;
+const BOTTOM_PAD = 30;
 
 export const terminalTemplate: Template = {
   meta: {
@@ -30,14 +30,22 @@ export const terminalTemplate: Template = {
     const { track, tracks } = options;
     const width = 480;
     const isMulti = tracks.length > 1;
-    const extraTracks = tracks.slice(1);
-    const baseHeight = 178;
-    const height = baseHeight + extraTracks.length * EXTRA_TRACK_HEIGHT;
 
     const pad = 20;
     const titleBarH = 36;
     const fontSize = 13;
     const lineH = 20;
+
+    // 콘텐츠 기반 높이 계산 (커서 baseline + 하단 여백)
+    const contentStart = titleBarH + pad + 8; // 64
+    let height: number;
+    if (!isMulti) {
+      // 4 content lines + url gap(4) + bottom pad
+      height = contentStart + lineH * 4 + 4 + BOTTOM_PAD;
+    } else {
+      // command(lineH+4) + tracks(lineH each, gap 4 except last) + spacing(8) + bottom pad
+      height = contentStart + (lineH + 4) + tracks.length * lineH + (tracks.length - 1) * 4 + 8 + BOTTOM_PAD;
+    }
 
     let svg = "";
 
